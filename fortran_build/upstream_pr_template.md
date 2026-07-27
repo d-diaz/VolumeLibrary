@@ -1,42 +1,67 @@
 # Upstream PR template
 
-Copy into the upstream PR body (`gh pr create --body-file fortran_build/upstream_pr_template.md` after filling in placeholders).
+Copy into the upstream PR body (`gh pr create --body-file fortran_build/upstream_pr_template.md` after filling in placeholders). Write it so a reviewer who has never seen this fork can evaluate the change on its own — link to fork-only tooling only as optional background, never as something they need to open to understand the diff.
 
 ## Summary
 
-- Files changed and why.
-- Intended behavioral impact (e.g. “no numerical change; warning cleanup only”).
+One or two sentences: what warning this fixes, in which file(s), and the behavioral impact (e.g. "no numerical change; warning cleanup only").
 
-## Build & test setup
+## The warning
 
-- gfortran on Ubuntu: `sudo apt-get install gfortran`
-- Build: `fortran_build/build_gfortran_shared.sh` → `build/libnvel.so`
-- Tests: `pip install -e ".[dev]" && pytest -v`
-- Warnings: `fortran_build/check_warnings.sh`
-- Optional: `.devcontainer/` for a preconfigured environment
+Paste the exact compiler warning(s), verbatim, with file:line:
 
-## Numerical regression
+```
+sf_zero.f:948:26: Warning: Change of value in conversion from 'INTEGER(4)' to 'REAL(4)' [-Wconversion]
+```
+
+In plain language, what pattern triggers this class of warning and why the compiler flags it (assume the reviewer knows Fortran but not this project's tooling):
+
+- e.g. "`RM1`'s exponent is computed with `IM12/2`, integer division that truncates before the result is used in a `REAL` expression. gfortran flags implicit truncation like this because it can silently change a value."
+
+## The fix
+
+Before:
+
+```fortran
+      PARAMETER (RM1 = (RBASE**(IM12/2)) * (RBASE**(IM12-IM12/2-1)))
+```
+
+After:
+
+```fortran
+      PARAMETER (RM1 = (RBASE**INT(REAL(IM12)/2.0)) *
+     1               (RBASE**(IM12-INT(REAL(IM12)/2.0)-1)))
+```
+
+Explain why the new code computes the same result as the old code (or, if it's a genuine correctness fix, why the old code was wrong and the new value is the intended one). Be explicit enough that the reviewer doesn't need to run anything to follow the logic — the test evidence below is confirmation, not the only explanation.
+
+## Test evidence
+
+Describe, in plain language, how you confirmed the fix doesn't change program behavior — don't assume the reviewer knows this fork's test infrastructure by name:
+
+- What was compared (e.g. "output of `R1MACH`/`D1MACH` for indices 1-5, before vs. after the change") and how (bit-identical? within a stated tolerance and why that tolerance is appropriate?).
+- Whether a new automated test was added, and what it checks in one sentence.
 
 | Check | Result |
 |-------|--------|
-| pytest goldens | e.g. 12/12 passed |
-| Fork CI run | link to Actions run |
-| Cases covering changed code paths | list case names from `cases.json` |
-| Tolerance | e.g. `1e-3` on `vollib_r` outputs |
+| Automated tests | e.g. 14/14 passed, including N new cases for this change |
+| Values compared | e.g. bit-identical for representative inputs — list them or point to the test file |
+| Tolerance (if not exact) | e.g. `1e-3`, and why exactness isn't expected |
+| Fork CI run | Link to the Actions run for this change, and name which job/step shows the relevant output (e.g. "expand 'Run pytest' for `test_<name>.py`") |
 
-## Warning regression
+Don't ask the reviewer to set up this fork's build pipeline (`build_gfortran_shared.sh`, `.devcontainer/`, etc.) to get this evidence themselves — link to where the fork already ran it and point at the specific output.
 
-| Metric | Before | After |
-|--------|--------|-------|
-| Total warnings (repo manifest) | … | … |
-| Warnings in touched file(s) | … | … |
-| New Tier A in touched files | — | none |
+## How to reproduce
 
-## Cross-links
+The one thing worth asking a reviewer to run themselves, with nothing but a stock gfortran install — confirming the warning above is gone:
+
+```
+gfortran -Wall -c <file> -o /dev/null
+```
+
+## Additional context (optional)
+
+Background for maintainers curious about the fork's process — not required reading to review this PR:
 
 - Fork development PR: `d-diaz/VolumeLibrary#N`
-- Note that full baselines and tooling live on the fork; this PR is source-only.
-
-## Optional FVS smoke
-
-State whether it was run, with commit hash and outcome, or explicitly note that pytest covers the affected regions.
+- This PR is source-only; full baselines and tooling live on the fork.
