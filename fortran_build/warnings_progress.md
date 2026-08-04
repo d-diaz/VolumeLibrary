@@ -4,12 +4,18 @@
 
 | Artifact | Path | Notes |
 |----------|------|-------|
-| Active inventory | `warnings_inventory_baseline.csv` | **1,369** rows; GitHub Actions `ubuntu-latest` (gfortran 13) |
-| Active summary | `warnings_summary_baseline.md` | Tier A: 363, B: 997, C: 9 |
+| Active inventory | `warnings_inventory_baseline.csv` | **1,367** rows; GitHub Actions `ubuntu-latest` (gfortran 13) |
+| Active summary | `warnings_summary_baseline.md` | Tier A: 361, B: 997, C: 9 |
 | Source list | `nvel_fortran_sources.txt` | 121 root `.f`/`.for` files |
 | Build log | `gfortran_build.log` | From `build_gfortran_warnings.sh` |
 | Current inventory | `warnings_inventory.csv` | From `parse_build_warnings.py` |
 | FVS reference | `reference/fvs_migration/` | Historical 1,370-warning FVS inventory |
+
+### Rebaseline history
+
+| Date | Baseline | Trigger |
+|------|----------|---------|
+| 2026-08-04 | 1,369 → 1,367 (Tier A 363 → 361) | Upstream sync to `20260729`. Upstream added `BH=4.5` at two `f_west.f` entry points, clearing 2 `bh` `-Wmaybe-uninitialized` Tier A warnings. Remaining churn is line-number drift only (`f_west.f`, `r6vol1.f`, `r8init.f`); no new distinct warnings. |
 
 ## Approach
 

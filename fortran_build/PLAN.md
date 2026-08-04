@@ -44,8 +44,8 @@ flowchart LR
 | Item | Value / path |
 |------|----------------|
 | Source manifest | `nvel_fortran_sources.txt` (121 files) |
-| Warning baseline | **1,371** warnings in **94** files (2026-06-06 capture) |
-| Tier A / B / C | 365 / 997 / 9 |
+| Warning baseline | **1,367** warnings in **94** files (2026-08-04 capture) |
+| Tier A / B / C | 361 / 997 / 9 |
 | Numerical tests | `tests/goldens/cases.json` + `pytest tests/` |
 
 Suggested compiler flags (document in `build_flags.conf`):

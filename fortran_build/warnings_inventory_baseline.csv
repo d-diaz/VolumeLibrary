@@ -235,15 +235,13 @@ type_conversion,A,3,f_west.f,481,16,Possible change of value in conversion from 
 type_conversion,A,3,f_west.f,620,11,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],f_west.f,f_west.f
 type_conversion,A,3,f_west.f,646,16,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],f_west.f,f_west.f
 type_conversion,A,3,f_west.f,742,11,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],f_west.f,f_west.f
-type_conversion,A,3,f_west.f,765,16,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],f_west.f,f_west.f
-type_conversion,A,3,f_west.f,860,11,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],f_west.f,f_west.f
-type_conversion,A,3,f_west.f,883,16,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],f_west.f,f_west.f
-unused_label,B,1,f_west.f,941,4,Label 50 at (1) defined but not used [-Wunused-label],f_west.f,f_west.f
-unused_label,B,1,f_west.f,926,4,Label 40 at (1) defined but not used [-Wunused-label],f_west.f,f_west.f
+type_conversion,A,3,f_west.f,767,16,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],f_west.f,f_west.f
+type_conversion,A,3,f_west.f,862,11,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],f_west.f,f_west.f
+type_conversion,A,3,f_west.f,887,16,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],f_west.f,f_west.f
+unused_label,B,1,f_west.f,945,4,Label 50 at (1) defined but not used [-Wunused-label],f_west.f,f_west.f
+unused_label,B,1,f_west.f,930,4,Label 40 at (1) defined but not used [-Wunused-label],f_west.f,f_west.f
 unused_dummy_argument,B,1,f_west.f,303,42,Unused dummy argument 'geosub' at (1) [-Wunused-dummy-argument],f_west.f,f_west.f
-uninitialized,A,3,f_west.f,874,10,'bh' may be used uninitialized [-Wmaybe-uninitialized],f_west.f,f_west.f
-uninitialized,A,3,f_west.f,756,10,'bh' may be used uninitialized [-Wmaybe-uninitialized],f_west.f,f_west.f
-uninitialized,A,3,f_west.f,964,72,'__result_fdbt_c1' may be used uninitialized [-Wmaybe-uninitialized],f_west.f,f_west.f
+uninitialized,A,3,f_west.f,968,72,'__result_fdbt_c1' may be used uninitialized [-Wmaybe-uninitialized],f_west.f,f_west.f
 deleted_feature,B,1,fia_ak_vol.for,327,20,Deleted feature: End expression in DO loop at (1) must be integer,fia_ak_vol.for,fia_ak_vol.for
 unused_dummy_argument,B,1,fia_ak_vol.for,182,13,Unused dummy argument 'errflg' at (1) [-Wunused-dummy-argument],fia_ak_vol.for,fia_ak_vol.for
 unused_variable,B,1,fia_ak_vol.for,185,26,Unused variable 'i' declared at (1) [-Wunused-variable],fia_ak_vol.for,fia_ak_vol.for
@@ -840,7 +838,7 @@ type_conversion,A,3,r6dibs.f,191,11,Possible change of value in conversion from 
 deleted_feature,B,1,r6vol1.f,53,72,Fortran 2018 deleted feature: DO termination statement which is not END DO or CONTINUE with label 10 at (1),r6vol1.f,r6vol1.f
 deleted_feature,B,1,r6vol1.f,92,72,Fortran 2018 deleted feature: DO termination statement which is not END DO or CONTINUE with label 20 at (1),r6vol1.f,r6vol1.f
 deleted_feature,B,1,r6vol1.f,116,72,Fortran 2018 deleted feature: DO termination statement which is not END DO or CONTINUE with label 50 at (1),r6vol1.f,r6vol1.f
-deleted_feature,B,1,r6vol1.f,147,72,Fortran 2018 deleted feature: DO termination statement which is not END DO or CONTINUE with label 80 at (1),r6vol1.f,r6vol1.f
+deleted_feature,B,1,r6vol1.f,152,72,Fortran 2018 deleted feature: DO termination statement which is not END DO or CONTINUE with label 80 at (1),r6vol1.f,r6vol1.f
 type_conversion,A,3,r6vol1.f,57,13,Possible change of value in conversion from REAL(4) to INTEGER(4) at (1) [-Wconversion],r6vol1.f,r6vol1.f
 type_conversion,A,3,r6vol1.f,62,11,Possible change of value in conversion from REAL(4) to INTEGER(4) at (1) [-Wconversion],r6vol1.f,r6vol1.f
 type_conversion,A,3,r6vol1.f,65,11,Possible change of value in conversion from REAL(4) to INTEGER(4) at (1) [-Wconversion],r6vol1.f,r6vol1.f
@@ -859,7 +857,7 @@ uninitialized,A,3,r8clkdib.f,53,47,'specpr' may be used uninitialized [-Wmaybe-u
 uninitialized,A,3,r8clkdib.f,53,47,'eqnpr' may be used uninitialized [-Wmaybe-uninitialized],r8clkdib.f,r8clkdib.f
 uninitialized,A,3,r8clkdib.f,53,47,'geoapr' may be used uninitialized [-Wmaybe-uninitialized],r8clkdib.f,r8clkdib.f
 tab_character,B,1,r8clkdib.f,11,41,Nonconforming tab character in column 1 of line 21 [-Wtabs],r8init.f,r8clkdib.f
-unused_label,B,1,r8init.f,822,4,Label 998 at (1) defined but not used [-Wunused-label],r8init.f,r8init.f
+unused_label,B,1,r8init.f,851,4,Label 998 at (1) defined but not used [-Wunused-label],r8init.f,r8init.f
 unused_dummy_argument,B,1,r8init.f,2,59,Unused dummy argument 'errflag' at (1) [-Wunused-dummy-argument],r8init.f,r8init.f
 unused_variable,B,1,r8init.f,24,31,Unused variable 'spcd' declared at (1) [-Wunused-variable],r8init.f,r8init.f
 unused_label,B,1,r8prep.f,380,3,Label 777 at (1) defined but not used [-Wunused-label],r8prep.f,r8prep.f
