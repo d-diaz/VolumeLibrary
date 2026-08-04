@@ -1,2 +1,2 @@
 def test_vernum(nvel):
-    assert nvel.version() == 20260415
+    assert nvel.version() == 20260729
