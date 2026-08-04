@@ -46,7 +46,7 @@ Phase 0 infrastructure is in place. Execute Tier A warning batches only after re
 | [parse_build_warnings.py](parse_build_warnings.py) | Parse build log → inventory CSV |
 | [compare_warnings.py](compare_warnings.py) | Diff inventory vs baseline |
 | [check_warnings.sh](check_warnings.sh) | Warning regression orchestration |
-| [warnings_inventory_baseline.csv](warnings_inventory_baseline.csv) | Repo-native baseline (**1,371** warnings; GitHub Actions `ubuntu-latest`, gfortran 13) |
+| [warnings_inventory_baseline.csv](warnings_inventory_baseline.csv) | Repo-native baseline (**1,367** warnings; GitHub Actions `ubuntu-latest`, gfortran 13) |
 | [warnings_summary_baseline.md](warnings_summary_baseline.md) | Baseline tier/category stats |
 
 ## Quick start

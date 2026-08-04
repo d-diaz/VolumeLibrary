@@ -3,9 +3,9 @@
 Source log: `fortran_build/gfortran_build.log`
 Inventory: `warnings_inventory_baseline.csv`
 
-- **Total warnings:** 1369
+- **Total warnings:** 1367
 - **Files:** 94
-- **Tier A / B / C:** 363 / 997 / 9
+- **Tier A / B / C:** 361 / 997 / 9
 
 ## By category
 
@@ -18,7 +18,7 @@ Inventory: `warnings_inventory_baseline.csv`
 | `unused_label` | 32 |
 | `character_truncation` | 29 |
 | `deleted_feature` | 27 |
-| `uninitialized` | 17 |
+| `uninitialized` | 15 |
 | `large_stack_array` | 9 |
 | `extension` | 2 |
 
@@ -29,7 +29,7 @@ Inventory: `warnings_inventory_baseline.csv`
 | `fia_vol_r5610.for` | 178 |
 | `vollibfia.f` | 119 |
 | `volumelibrary.f` | 108 |
-| `f_west.f` | 73 |
+| `f_west.f` | 71 |
 | `f_other.f` | 53 |
 | `pmtprofile.f` | 50 |
 | `r9clark.f` | 40 |
