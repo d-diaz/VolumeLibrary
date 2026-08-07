@@ -3,16 +3,16 @@
 Source log: `fortran_build/gfortran_build.log`
 Inventory: `warnings_inventory_baseline.csv`
 
-- **Total warnings:** 1297
-- **Files:** 94
-- **Tier A / B / C:** 293 / 995 / 9
+- **Total warnings:** 2038
+- **Files:** 102
+- **Tier A / B / C:** 293 / 1736 / 9
 
 ## By category
 
 | Category | Count |
 |----------|------:|
+| `tab_character` | 1043 |
 | `unused_variable` | 552 |
-| `tab_character` | 302 |
 | `type_conversion` | 250 |
 | `unused_dummy_argument` | 82 |
 | `unused_label` | 30 |
@@ -27,28 +27,28 @@ Inventory: `warnings_inventory_baseline.csv`
 | File | Count |
 |------|------:|
 | `fia_vol_r5610.for` | 178 |
+| `volumelibrary.f` | 124 |
 | `vollibfia.f` | 119 |
-| `volumelibrary.f` | 108 |
-| `f_other.f` | 53 |
-| `pmtprofile.f` | 50 |
-| `r9clark.f` | 40 |
+| `r8vol2.f` | 116 |
+| `profile2.f` | 107 |
+| `r9clark.f` | 88 |
+| `r10vol1.f` | 78 |
+| `pmtprofile.f` | 55 |
+| `f_other.f` | 54 |
+| `formclas.f` | 54 |
+| `blmvol.f` | 49 |
+| `pnwtarif.f` | 43 |
+| `f_alaska.f` | 41 |
+| `r8clkdib.f` | 38 |
+| `vollibcs.f` | 38 |
+| `r9init.f` | 36 |
 | `nsvb.f` | 35 |
-| `r10vol1.f` | 33 |
-| `r9clarkdib.f` | 31 |
-| `vollibcs.f` | 31 |
-| `f_alaska.f` | 30 |
+| `volinit.f` | 35 |
+| `r9clarkdib.f` | 33 |
 | `fia_nc_vol.for` | 29 |
+| `r8vol.f` | 29 |
+| `calcdia.f` | 27 |
+| `volapss.f` | 27 |
+| `r10tap.f` | 26 |
 | `calcbiomass.f` | 25 |
-| `fia_kemp_vol.for` | 24 |
-| `honer.f` | 23 |
-| `r8vol2.f` | 23 |
-| `volapss.f` | 23 |
-| `volinit.f` | 22 |
-| `calcdia.f` | 17 |
-| `pnwtarif.f` | 16 |
-| `fia_nw_tarif.for` | 15 |
-| `formclas.f` | 15 |
-| `vollib09.f` | 15 |
-| `f_ingy.f` | 14 |
-| `fia_pi_vol.for` | 14 |
 

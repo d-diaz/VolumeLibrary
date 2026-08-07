@@ -21,7 +21,10 @@ DEFAULT_SUMMARY_MD = FORTRAN_BUILD / "warnings_summary.md"
 
 FILE_LOC_RE = re.compile(r"^([\w.-]+\.(?:f|F|for|inc|INC|F77)):(\d+):(\d+):$")
 WARN_RE = re.compile(r"^Warning:\s*(.+)$")
-TAB_RE = re.compile(r"^f951:\s*Warning:\s*(.+)$")
+# Driver-level warnings ("f951: Warning: ...") carry no file:line:col: prefix.
+F951_WARN_RE = re.compile(r"^f951:\s*Warning:\s*(.+)$")
+# ... but -Wtabs embeds the position in the message text itself.
+F951_LOC_RE = re.compile(r"\bin column (\d+) of line (\d+)\b")
 GFORTRAN_CMD_RE = re.compile(r"gfortran\s+.*\s-c(?:\s+-o\s+\S+\.o)?\s+(\S+\.(?:f|F|for))\s*$")
 
 UnclassifiedWarning = tuple[str, str]
@@ -138,6 +141,16 @@ def parse_build_log(
     pairing each ``file:line:col:`` prefix with the following warning
     text. Lines that do not match that shape are skipped.
 
+    Driver-level warnings are emitted without that prefix and must be
+    handled separately::
+
+        f951: Warning: Nonconforming tab character in column 1 of line 70 [-Wtabs]
+
+    These are attributed to the current compile unit, with line and column
+    read out of the message text. Pairing them against a pending location
+    line instead would both drop most of them (only those that happen to
+    trail an unconsumed location line survive) and mislocate the rest.
+
     Args:
         build_log: Path to ``gfortran_build.log``.
         source_map: Basename-to-path map from :func:`load_source_map`.
@@ -165,7 +178,30 @@ def parse_build_log(
             pending_loc = (loc_match.group(1), int(loc_match.group(2)), int(loc_match.group(3)))
             continue
 
-        warn_match = WARN_RE.match(line) or TAB_RE.match(line)
+        f951_match = F951_WARN_RE.match(line)
+        if f951_match:
+            # Self-locating: attribute to the compile unit, not to any
+            # pending location line (which belongs to a different warning).
+            message = f951_match.group(1).strip()
+            category, tier = classify(message, unclassified=unclassified)
+            embedded = F951_LOC_RE.search(message)
+            loc_file = current_source or ""
+            rows.append(
+                {
+                    "warning_type": category,
+                    "tier": tier.label,
+                    "tier_weight": tier.weight,
+                    "file": resolve_repo_path(loc_file, current_source, source_map),
+                    "line": int(embedded.group(2)) if embedded else 0,
+                    "column": int(embedded.group(1)) if embedded else 0,
+                    "message": message,
+                    "compile_unit": current_source or "",
+                    "loc_file": loc_file,
+                }
+            )
+            continue  # leave pending_loc intact for its own warning
+
+        warn_match = WARN_RE.match(line)
         if warn_match and pending_loc:
             loc_file, line_no, col_no = pending_loc
             message = warn_match.group(1).strip()

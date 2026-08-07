@@ -46,8 +46,8 @@ Phase 0 infrastructure is in place. Execute Tier A warning batches only after re
 | [parse_build_warnings.py](parse_build_warnings.py) | Parse build log → inventory CSV |
 | [compare_warnings.py](compare_warnings.py) | Diff inventory vs baseline |
 | [check_warnings.sh](check_warnings.sh) | Warning regression orchestration |
-| [warnings_inventory_baseline.csv](warnings_inventory_baseline.csv) | Repo-native baseline (**1,367** warnings; GitHub Actions `ubuntu-latest`, gfortran 13) |
-| [warnings_summary_baseline.md](warnings_summary_baseline.md) | Baseline tier/category stats |
+| [warnings_inventory_baseline.csv](warnings_inventory_baseline.csv) | Repo-native baseline (**2,038** warnings in 102 files; gfortran 13) |
+| [warnings_summary_baseline.md](warnings_summary_baseline.md) | Baseline tier/category stats (generated from the CSV) |
 
 ## Quick start
 
@@ -76,12 +76,40 @@ chmod +x fortran_build/check_warnings.sh
 fortran_build/check_warnings.sh
 ```
 
+### Rebaseline
+
+After a batch clears warnings, `check_warnings.sh` keeps reporting the *old* baseline until you
+move it. **Regenerate straight into the baseline filenames — do not copy the current pair over
+them:**
+
+```bash
+python3 fortran_build/parse_build_warnings.py fortran_build/gfortran_build.log \
+  -o fortran_build/warnings_inventory_baseline.csv \
+  -s fortran_build/warnings_summary_baseline.md
+python3 fortran_build/compare_warnings.py          # must now report PASS, delta +0
+```
+
+Copying `warnings_inventory.csv` / `warnings_summary.md` onto the baseline pair *appears* to work,
+but the summary embeds the name of the inventory it was generated from — so the copy leaves
+`Inventory: warnings_inventory.csv` in a file that is actually the baseline, pointing readers at a
+gitignored artifact. Regenerating with `-o`/`-s` sets it correctly.
+
+Then record the move in [warnings_progress.md](warnings_progress.md) — add a dated **Rebaseline
+history** row with old → new totals and the trigger, and refresh the count tables in
+[PLAN.md](PLAN.md). Note that `compare_warnings.py` keys on `(file, line, column, …)`, so if a
+fix shifted line numbers, say so in that row: surviving warnings below the shift get re-keyed as
+"new" even though nothing regressed.
+
+Both `*_baseline` files are committed; the un-suffixed `warnings_inventory.csv` and
+`warnings_summary.md` are generated and gitignored.
+
 ### Fix a batch and verify
 
 1. Tier A: `python3 tests/record_goldens.py` first, then fix (see [PLAN.md](PLAN.md))
 2. `fortran_build/check_warnings.sh`
 3. `pytest tests/ -v`
-4. Open upstream PR per [upstream-workflow.md](upstream-workflow.md); use [upstream_pr_template.md](upstream_pr_template.md) for evidence
+4. Rebaseline (above) and update [warnings_progress.md](warnings_progress.md) + [PLAN.md](PLAN.md)
+5. Open upstream PR per [upstream-workflow.md](upstream-workflow.md); use [upstream_pr_template.md](upstream_pr_template.md) for evidence
 
 ### Optional FVS smoke
 
