@@ -3,17 +3,17 @@
 Source log: `fortran_build/gfortran_build.log`
 Inventory: `warnings_inventory_baseline.csv`
 
-- **Total warnings:** 2038
-- **Files:** 102
-- **Tier A / B / C:** 293 / 1736 / 9
+- **Total warnings:** 1984
+- **Files:** 101
+- **Tier A / B / C:** 240 / 1735 / 9
 
 ## By category
 
 | Category | Count |
 |----------|------:|
-| `tab_character` | 1043 |
+| `tab_character` | 1042 |
 | `unused_variable` | 552 |
-| `type_conversion` | 250 |
+| `type_conversion` | 197 |
 | `unused_dummy_argument` | 82 |
 | `unused_label` | 30 |
 | `character_truncation` | 29 |
@@ -34,7 +34,6 @@ Inventory: `warnings_inventory_baseline.csv`
 | `r9clark.f` | 88 |
 | `r10vol1.f` | 78 |
 | `pmtprofile.f` | 55 |
-| `f_other.f` | 54 |
 | `formclas.f` | 54 |
 | `blmvol.f` | 49 |
 | `pnwtarif.f` | 43 |
@@ -51,4 +50,5 @@ Inventory: `warnings_inventory_baseline.csv`
 | `volapss.f` | 27 |
 | `r10tap.f` | 26 |
 | `calcbiomass.f` | 25 |
+| `getvoleq.f` | 25 |
 
