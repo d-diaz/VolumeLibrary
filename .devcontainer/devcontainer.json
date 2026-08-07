@@ -25,6 +25,7 @@
             "extensions": [
                 "anthropic.claude-code",
                 "charliermarsh.ruff",
+                "ezoosk.claude-context-bar",
                 "github.vscode-github-actions",
                 "github.vscode-pull-request-github",
                 "johnpapa.vscode-peacock",
