@@ -6,13 +6,18 @@ import pytest
 CASES = Path(__file__).resolve().parent / "goldens" / "cases.json"
 
 
+def load_cases():
+    data = json.loads(CASES.read_text(encoding="utf-8"))
+    return [c for c in data["cases"] if c.get("api") == "getvoleq_r"]
+
+
 @pytest.fixture(scope="session")
 def golden_cases():
     return json.loads(CASES.read_text(encoding="utf-8"))["cases"]
 
 
-def test_getvoleq_r9_837(nvel, golden_cases):
-    case = next(c for c in golden_cases if c["name"] == "getvoleq_r9_837")
+@pytest.mark.parametrize("case", load_cases(), ids=lambda c: c["name"])
+def test_getvoleq_golden(nvel, case):
     inp = case["inputs"]
     exp = case["expected"]
     volume_equation = nvel.get_voleq(

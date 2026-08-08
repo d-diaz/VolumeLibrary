@@ -142,46 +142,6 @@ tab_character,B,1,dvest.f,145,1,Nonconforming tab character in column 1 of line 
 tab_character,B,1,dvest.f,146,1,Nonconforming tab character in column 1 of line 146 [-Wtabs],dvest.f,dvest.f
 tab_character,B,1,dvest.f,147,1,Nonconforming tab character in column 1 of line 147 [-Wtabs],dvest.f,dvest.f
 unused_dummy_argument,B,1,dvest.f,8,63,Unused dummy argument ‘htlog’ at (1) [-Wunused-dummy-argument],dvest.f,dvest.f
-tab_character,B,1,f_alaska.f,102,1,Nonconforming tab character in column 1 of line 102 [-Wtabs],f_alaska.f,f_alaska.f
-tab_character,B,1,f_alaska.f,103,1,Nonconforming tab character in column 1 of line 103 [-Wtabs],f_alaska.f,f_alaska.f
-tab_character,B,1,f_alaska.f,104,1,Nonconforming tab character in column 1 of line 104 [-Wtabs],f_alaska.f,f_alaska.f
-tab_character,B,1,f_alaska.f,107,1,Nonconforming tab character in column 1 of line 107 [-Wtabs],f_alaska.f,f_alaska.f
-tab_character,B,1,f_alaska.f,109,1,Nonconforming tab character in column 1 of line 109 [-Wtabs],f_alaska.f,f_alaska.f
-tab_character,B,1,f_alaska.f,110,1,Nonconforming tab character in column 1 of line 110 [-Wtabs],f_alaska.f,f_alaska.f
-tab_character,B,1,f_alaska.f,111,1,Nonconforming tab character in column 1 of line 111 [-Wtabs],f_alaska.f,f_alaska.f
-tab_character,B,1,f_alaska.f,233,1,Nonconforming tab character in column 1 of line 233 [-Wtabs],f_alaska.f,f_alaska.f
-tab_character,B,1,f_alaska.f,234,1,Nonconforming tab character in column 1 of line 234 [-Wtabs],f_alaska.f,f_alaska.f
-tab_character,B,1,f_alaska.f,368,1,Nonconforming tab character in column 1 of line 368 [-Wtabs],f_alaska.f,f_alaska.f
-tab_character,B,1,f_alaska.f,369,1,Nonconforming tab character in column 1 of line 369 [-Wtabs],f_alaska.f,f_alaska.f
-type_conversion,A,3,f_alaska.f,113,16,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],f_alaska.f,f_alaska.f
-type_conversion,A,3,f_alaska.f,114,14,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],f_alaska.f,f_alaska.f
-type_conversion,A,3,f_alaska.f,163,10,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],f_alaska.f,f_alaska.f
-type_conversion,A,3,f_alaska.f,164,10,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],f_alaska.f,f_alaska.f
-type_conversion,A,3,f_alaska.f,165,10,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],f_alaska.f,f_alaska.f
-type_conversion,A,3,f_alaska.f,166,10,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],f_alaska.f,f_alaska.f
-type_conversion,A,3,f_alaska.f,168,14,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],f_alaska.f,f_alaska.f
-type_conversion,A,3,f_alaska.f,172,9,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],f_alaska.f,f_alaska.f
-type_conversion,A,3,f_alaska.f,173,14,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],f_alaska.f,f_alaska.f
-type_conversion,A,3,f_alaska.f,175,15,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],f_alaska.f,f_alaska.f
-type_conversion,A,3,f_alaska.f,181,10,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],f_alaska.f,f_alaska.f
-type_conversion,A,3,f_alaska.f,286,15,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],f_alaska.f,f_alaska.f
-type_conversion,A,3,f_alaska.f,372,13,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],f_alaska.f,f_alaska.f
-type_conversion,A,3,f_alaska.f,373,13,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],f_alaska.f,f_alaska.f
-type_conversion,A,3,f_alaska.f,374,13,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],f_alaska.f,f_alaska.f
-type_conversion,A,3,f_alaska.f,375,13,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],f_alaska.f,f_alaska.f
-type_conversion,A,3,f_alaska.f,376,13,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],f_alaska.f,f_alaska.f
-type_conversion,A,3,f_alaska.f,377,13,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],f_alaska.f,f_alaska.f
-type_conversion,A,3,f_alaska.f,379,12,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],f_alaska.f,f_alaska.f
-type_conversion,A,3,f_alaska.f,380,12,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],f_alaska.f,f_alaska.f
-type_conversion,A,3,f_alaska.f,381,12,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],f_alaska.f,f_alaska.f
-type_conversion,A,3,f_alaska.f,383,13,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],f_alaska.f,f_alaska.f
-type_conversion,A,3,f_alaska.f,384,13,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],f_alaska.f,f_alaska.f
-type_conversion,A,3,f_alaska.f,385,13,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],f_alaska.f,f_alaska.f
-type_conversion,A,3,f_alaska.f,386,13,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],f_alaska.f,f_alaska.f
-type_conversion,A,3,f_alaska.f,387,13,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],f_alaska.f,f_alaska.f
-type_conversion,A,3,f_alaska.f,388,13,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],f_alaska.f,f_alaska.f
-type_conversion,A,3,f_alaska.f,389,13,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],f_alaska.f,f_alaska.f
-type_conversion,A,3,f_alaska.f,393,16,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],f_alaska.f,f_alaska.f
 unused_dummy_argument,B,1,f_alaska.f,462,33,Unused dummy argument ‘setopt’ at (1) [-Wunused-dummy-argument],f_alaska.f,f_alaska.f
 tab_character,B,1,f_ingy.f,312,1,Nonconforming tab character in column 1 of line 312 [-Wtabs],f_ingy.f,f_ingy.f
 tab_character,B,1,f_ingy.f,1286,1,Nonconforming tab character in column 1 of line 1286 [-Wtabs],f_ingy.f,f_ingy.f
