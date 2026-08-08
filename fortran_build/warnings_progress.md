@@ -48,9 +48,9 @@
 
 | File | Date | Warnings | Summary |
 |------|------|----------|---------|
-| `sf_zero.f` | 2026-07-26 | 2 `integer_division` | `AMACH`'s `RM1`/`DM1` exponent-halving rewritten as `REAL`/`DBLE` division + explicit `INT()`/`IDINT()` truncation (was raw integer division). Bit-identical `R1MACH`/`D1MACH` output confirmed for indices 1-5; new regression test `tests/test_sf_zero_machine_constants.py`. Upstream PR: pending. |
-| `f_other.f` | 2026-08-07 | 53 `type_conversion`, 1 `tab_character` | All 53 narrowing stores wrapped in explicit `REAL()` — a provable no-op, since the compiler already emitted exactly that conversion (the source says so at `f_other.f:355`, "These outcomes are SINGLE precision"). No declaration widening, no reflowing, no inserted lines; the hard tab at line 70 was replaced with spaces in place. `VAR_BH:876,882` look like the `f_west.f` `d0`→`e0` case but are **not**: those `D+01` literals sit in an arithmetic expression, where the double literal promotes the whole expression, so `E+01` would evaluate in single precision and move results — wrapped in `REAL()` instead, literals untouched. 20 new R2/R3/R4 golden cases (none of the previous 37 reached this file); a gcov build confirmed the 20 cases execute all 53 edited lines. Bit-identical `vol[0..14]` over a 12,960-case sweep (18 equations × dbh/height/merch-top/stump/upper-stem grid) against the pre-edit `libnvel.so`; the sweep harness was validated by perturbing one `BK` coefficient in its 6th decimal, which produced 1,160 mismatches. Upstream PR: pending. |
-| `f_west.f` | 2026-08-04 | 67 `type_conversion`, 2 `unused_label`, 1 `uninitialized` | 32 `DATA` `d0` literals feeding `REAL*4 r25`/`r34` rewritten as `e0` (same stored bits — the `REAL*4` declaration is deliberate: these regional coefficients carry 4–5 significant digits, and `RFLW`/`RHFW` are `REAL*4` outputs). 35 `REAL*8`→`REAL*4` narrowing assignments wrapped in explicit `REAL()`. `FDBT_C1` result initialized (`JSP` outside 3–5 returned an unset value). Dead labels 40/50 removed. 33 new Flewelling westside golden cases; bit-identical over a 7,290-case sweep. Upstream PR: pending. |
+| `sf_zero.f` | 2026-07-26 | 2 `integer_division` | `AMACH`'s `RM1`/`DM1` exponent-halving rewritten as `REAL`/`DBLE` division + explicit `INT()`/`IDINT()` truncation (was raw integer division). Bit-identical `R1MACH`/`D1MACH` output confirmed for indices 1-5; new regression test `tests/test_sf_zero_machine_constants.py`. Upstream PR: [FMSC#13](https://github.com/FMSC-Measurements/VolumeLibrary/pull/13) — **merged**. |
+| `f_other.f` | 2026-08-07 | 53 `type_conversion`, 1 `tab_character` | All 53 narrowing stores wrapped in explicit `REAL()` — a provable no-op, since the compiler already emitted exactly that conversion (the source says so at `f_other.f:355`, "These outcomes are SINGLE precision"). No declaration widening, no reflowing, no inserted lines; the hard tab at line 70 was replaced with spaces in place. `VAR_BH:876,882` look like the `f_west.f` `d0`→`e0` case but are **not**: those `D+01` literals sit in an arithmetic expression, where the double literal promotes the whole expression, so `E+01` would evaluate in single precision and move results — wrapped in `REAL()` instead, literals untouched. 20 new R2/R3/R4 golden cases (none of the previous 37 reached this file); a gcov build confirmed the 20 cases execute all 53 edited lines. Bit-identical `vol[0..14]` over a 12,960-case sweep (18 equations × dbh/height/merch-top/stump/upper-stem grid) against the pre-edit `libnvel.so`; the sweep harness was validated by perturbing one `BK` coefficient in its 6th decimal, which produced 1,160 mismatches. Fork PR: [#17](https://github.com/d-diaz/VolumeLibrary/pull/17). Upstream PR: [FMSC#16](https://github.com/FMSC-Measurements/VolumeLibrary/pull/16) — open, branch `upstream/fix-f_other` off `master` at release 20260731. |
+| `f_west.f` | 2026-08-04 | 67 `type_conversion`, 2 `unused_label`, 1 `uninitialized` | 32 `DATA` `d0` literals feeding `REAL*4 r25`/`r34` rewritten as `e0` (same stored bits — the `REAL*4` declaration is deliberate: these regional coefficients carry 4–5 significant digits, and `RFLW`/`RHFW` are `REAL*4` outputs). 35 `REAL*8`→`REAL*4` narrowing assignments wrapped in explicit `REAL()`. `FDBT_C1` result initialized (`JSP` outside 3–5 returned an unset value). Dead labels 40/50 removed. 33 new Flewelling westside golden cases; bit-identical over a 7,290-case sweep. Fork PR: [#14](https://github.com/d-diaz/VolumeLibrary/pull/14). Upstream PR: [FMSC#15](https://github.com/FMSC-Measurements/VolumeLibrary/pull/15) — open. |
 
 ## Golden coverage limits (Batch 1b)
 
@@ -80,10 +80,30 @@ confirms the 20 cases execute all 53 edited lines.
 
 ## Next steps
 
-1. Open the `f_west.f` upstream PR (fork CI green first)
-2. Open the `f_other.f` upstream PR (root `*.f` only — no goldens, no tooling)
-3. Batch 1c on `f_alaska.f` (41)
-4. `check_warnings.sh` + `pytest` after each batch
+1. Await review on FMSC#15 (`f_west.f`) and FMSC#16 (`f_other.f`)
+2. Batch 1c on `f_alaska.f` (41)
+3. `check_warnings.sh` + `pytest` after each batch
+
+### Upstream sync
+
+Fork `main` is **not** behind upstream on any Fortran source. As of 2026-08-08 the only root
+sources differing from `upstream/master` are `f_west.f` and `f_other.f`, and both differ
+because they carry our fixes that upstream has not merged yet. `vernum.f` returns `20260729`
+on **both** sides, despite upstream's commit titled `vollib release 20260731`, so there is no
+version drift and the `vernum` golden needs no re-record.
+
+Defer `git merge upstream/master` until FMSC#15/#16 land — there is no content to gain now,
+and two hazards to respect when the time comes:
+
+- The merge base is release **20260415**, so a three-dot diff (`main...upstream/master`)
+  replays changes both sides already share and reads as though upstream is far ahead. Use a
+  two-dot diff (`git diff main upstream/master`) to see real content drift.
+- Upstream still holds `vollib/`, `.vs/`, `volbiolibrary.f` and similar at paths this fork
+  archived under `_legacy/`. Merging across the 20260415 base can resurrect them or conflict;
+  resolve per [FORK.md](../FORK.md).
+
+Merging after the upstream PRs land also relinks the histories and makes future diffs
+accurate.
 
 `PLAN.md`'s tier and per-file tables were regenerated from the inventory in the same commit
 as this rebaseline; keep them in step on every future rebaseline.
