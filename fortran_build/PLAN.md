@@ -35,7 +35,7 @@ flowchart LR
 | 0 | Repo manifest, shared library, ctypes, initial goldens | `pytest tests/` passes | COMPLETE |
 | 1a | Re-capture warning baseline on repo-native manifest | Inventory committed | COMPLETE |
 | 1b | Tier A/B fix batches | Warning count down; pytest unchanged for Tier A | IN PROGRESS — `sf_zero.f`, `f_west.f`, `f_other.f` done; `f_alaska.f` next |
-| 2 | Upstream PRs to FMSC | Fork CI green; optional FVS smoke | READY TO START |
+| 2 | Upstream PRs to FMSC | Fork CI green; optional FVS smoke | IN PROGRESS — `sf_zero.f` merged (FMSC#13); `f_west.f` (FMSC#15) and `f_other.f` (FMSC#16) open |
 
 ## Context
 
