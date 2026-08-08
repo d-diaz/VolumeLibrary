@@ -2411,6 +2411,624 @@
         ]
       },
       "notes": "Flewelling R2 3-point with the upper-stem point below breast height; reaches the both-heights-below-BH branch of COR_OT, which the form-class cases never take"
+    },
+    {
+      "name": "f_alaska_2pt_ycedar_geo00",
+      "api": "vollib_r",
+      "inputs": {
+        "region": 10,
+        "forest": "05",
+        "district": "01",
+        "dbh": 20.0,
+        "total_height": 120.0,
+        "primary_merchantable_top": 6.0,
+        "secondary_merchantable_top": 4.0,
+        "height_to_first_product": 0.0,
+        "height_to_second_product": 0.0,
+        "upper_stem_height": 0.0,
+        "upper_stem_diameter": 0.0,
+        "stump_height": 1.0,
+        "form_class": 0,
+        "diameter_outside_bark": 0.0,
+        "butt_swelling_ratio": 0.0,
+        "volume_equation": "A00F32W042",
+        "species": 42
+      },
+      "expected": {
+        "errflag": 0,
+        "vol": [
+          103.0999984741211,
+          450.0,
+          0.0,
+          94.70001220703125,
+          0.0,
+          0.0,
+          1.100000023841858,
+          0.0,
+          0.0,
+          630.0,
+          0.0,
+          10.0,
+          0.0,
+          2.8130075931549072,
+          0.7021093368530273
+        ]
+      },
+      "notes": "Flewelling Alaska yellow-cedar, JSP 31 -> JRSP 1; SHP_AK + FDBT_AK via SF_2PT/SF_SHP, SHP_AK coefficient set 1, FDBT_AK branch 1"
+    },
+    {
+      "name": "f_alaska_2pt_redcedar_geo00",
+      "api": "vollib_r",
+      "inputs": {
+        "region": 10,
+        "forest": "05",
+        "district": "01",
+        "dbh": 20.0,
+        "total_height": 120.0,
+        "primary_merchantable_top": 6.0,
+        "secondary_merchantable_top": 4.0,
+        "height_to_first_product": 0.0,
+        "height_to_second_product": 0.0,
+        "upper_stem_height": 0.0,
+        "upper_stem_diameter": 0.0,
+        "stump_height": 1.0,
+        "form_class": 0,
+        "diameter_outside_bark": 0.0,
+        "butt_swelling_ratio": 0.0,
+        "volume_equation": "A00F32W242",
+        "species": 242
+      },
+      "expected": {
+        "errflag": 0,
+        "vol": [
+          94.0,
+          380.0,
+          0.0,
+          83.59999084472656,
+          0.0,
+          0.0,
+          1.399999976158142,
+          0.0,
+          0.0,
+          545.0,
+          0.0,
+          10.0,
+          0.0,
+          3.111100196838379,
+          0.7635599970817566
+        ]
+      },
+      "notes": "Flewelling Alaska western redcedar, JSP 32 -> JRSP 2; SHP_AK + FDBT_AK via SF_2PT/SF_SHP, SHP_AK coefficient set 2, FDBT_AK branch 2"
+    },
+    {
+      "name": "f_alaska_2pt_spruce_geo00",
+      "api": "vollib_r",
+      "inputs": {
+        "region": 10,
+        "forest": "05",
+        "district": "01",
+        "dbh": 20.0,
+        "total_height": 120.0,
+        "primary_merchantable_top": 6.0,
+        "secondary_merchantable_top": 4.0,
+        "height_to_first_product": 0.0,
+        "height_to_second_product": 0.0,
+        "upper_stem_height": 0.0,
+        "upper_stem_diameter": 0.0,
+        "stump_height": 1.0,
+        "form_class": 0,
+        "diameter_outside_bark": 0.0,
+        "butt_swelling_ratio": 0.0,
+        "volume_equation": "A00F32W098",
+        "species": 98
+      },
+      "expected": {
+        "errflag": 0,
+        "vol": [
+          107.5,
+          450.0,
+          0.0,
+          96.49999237060547,
+          0.0,
+          0.0,
+          1.100000023841858,
+          0.0,
+          0.0,
+          650.0,
+          0.0,
+          10.0,
+          0.0,
+          2.678483009338379,
+          0.8308531045913696
+        ]
+      },
+      "notes": "Flewelling Alaska Sitka spruce old growth, JSP 33 -> JRSP 3; SHP_AK + FDBT_AK via SF_2PT/SF_SHP, SHP_AK coefficient set 3, FDBT_AK branch 3"
+    },
+    {
+      "name": "f_alaska_2pt_hemlock_geo00",
+      "api": "vollib_r",
+      "inputs": {
+        "region": 10,
+        "forest": "05",
+        "district": "01",
+        "dbh": 20.0,
+        "total_height": 120.0,
+        "primary_merchantable_top": 6.0,
+        "secondary_merchantable_top": 4.0,
+        "height_to_first_product": 0.0,
+        "height_to_second_product": 0.0,
+        "upper_stem_height": 0.0,
+        "upper_stem_diameter": 0.0,
+        "stump_height": 1.0,
+        "form_class": 0,
+        "diameter_outside_bark": 0.0,
+        "butt_swelling_ratio": 0.0,
+        "volume_equation": "A00F32W260",
+        "species": 260
+      },
+      "expected": {
+        "errflag": 0,
+        "vol": [
+          103.4000015258789,
+          450.0,
+          0.0,
+          93.79999542236328,
+          0.0,
+          0.0,
+          1.100000023841858,
+          0.0,
+          0.0,
+          625.0,
+          0.0,
+          10.0,
+          0.0,
+          2.5783867835998535,
+          0.7998037338256836
+        ]
+      },
+      "notes": "Flewelling Alaska western hemlock old growth, JSP 34 -> JRSP 3; SHP_AK + FDBT_AK via SF_2PT/SF_SHP, FDBT_AK branch 4"
+    },
+    {
+      "name": "f_alaska_2pt_spruce_geo02",
+      "api": "vollib_r",
+      "inputs": {
+        "region": 10,
+        "forest": "05",
+        "district": "01",
+        "dbh": 20.0,
+        "total_height": 120.0,
+        "primary_merchantable_top": 6.0,
+        "secondary_merchantable_top": 4.0,
+        "height_to_first_product": 0.0,
+        "height_to_second_product": 0.0,
+        "upper_stem_height": 0.0,
+        "upper_stem_diameter": 0.0,
+        "stump_height": 1.0,
+        "form_class": 0,
+        "diameter_outside_bark": 0.0,
+        "butt_swelling_ratio": 0.0,
+        "volume_equation": "A02F32W098",
+        "species": 98
+      },
+      "expected": {
+        "errflag": 0,
+        "vol": [
+          114.9000015258789,
+          500.0,
+          0.0,
+          104.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          705.0,
+          0.0,
+          0.0,
+          0.0,
+          2.8185677528381348,
+          2.1624529361724854
+        ]
+      },
+      "notes": "Flewelling Alaska spruce second growth (GEOSUB 02), JSP 35 -> JRSP 4; SHP_AK + FDBT_AK via SF_2PT/SF_SHP, SHP_AK coefficient set 4, FDBT_AK branch 5"
+    },
+    {
+      "name": "f_alaska_2pt_hemlock_geo02",
+      "api": "vollib_r",
+      "inputs": {
+        "region": 10,
+        "forest": "05",
+        "district": "01",
+        "dbh": 20.0,
+        "total_height": 120.0,
+        "primary_merchantable_top": 6.0,
+        "secondary_merchantable_top": 4.0,
+        "height_to_first_product": 0.0,
+        "height_to_second_product": 0.0,
+        "upper_stem_height": 0.0,
+        "upper_stem_diameter": 0.0,
+        "stump_height": 1.0,
+        "form_class": 0,
+        "diameter_outside_bark": 0.0,
+        "butt_swelling_ratio": 0.0,
+        "volume_equation": "A02F32W263",
+        "species": 263
+      },
+      "expected": {
+        "errflag": 0,
+        "vol": [
+          111.70000457763672,
+          460.0,
+          0.0,
+          104.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          705.0,
+          0.0,
+          0.0,
+          0.0,
+          2.7388079166412354,
+          2.1597840785980225
+        ]
+      },
+      "notes": "Flewelling Alaska hemlock second growth (GEOSUB 02), JSP 36 -> JRSP 4; SHP_AK + FDBT_AK via SF_2PT/SF_SHP, FDBT_AK branch 6"
+    },
+    {
+      "name": "f_alaska_3pt_ycedar_fclass",
+      "api": "vollib_r",
+      "inputs": {
+        "region": 10,
+        "forest": "05",
+        "district": "01",
+        "dbh": 20.0,
+        "total_height": 120.0,
+        "primary_merchantable_top": 6.0,
+        "secondary_merchantable_top": 4.0,
+        "height_to_first_product": 0.0,
+        "height_to_second_product": 0.0,
+        "upper_stem_height": 0.0,
+        "upper_stem_diameter": 0.0,
+        "stump_height": 1.0,
+        "form_class": 80,
+        "diameter_outside_bark": 0.0,
+        "butt_swelling_ratio": 0.0,
+        "volume_equation": "A00F33W042",
+        "species": 42
+      },
+      "expected": {
+        "errflag": 0,
+        "vol": [
+          111.70000457763672,
+          480.0,
+          0.0,
+          101.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          680.0,
+          0.0,
+          0.0,
+          0.0,
+          2.803866386413574,
+          2.178931713104248
+        ]
+      },
+      "notes": "Alaska yellow-cedar 3-point via form class, JRSP 1; adds VAR_AK coefficient unpack (372-393) and COR_AK (286) via SF_3PT/SF_YHAT3"
+    },
+    {
+      "name": "f_alaska_3pt_redcedar_fclass",
+      "api": "vollib_r",
+      "inputs": {
+        "region": 10,
+        "forest": "05",
+        "district": "01",
+        "dbh": 20.0,
+        "total_height": 120.0,
+        "primary_merchantable_top": 6.0,
+        "secondary_merchantable_top": 4.0,
+        "height_to_first_product": 0.0,
+        "height_to_second_product": 0.0,
+        "upper_stem_height": 0.0,
+        "upper_stem_diameter": 0.0,
+        "stump_height": 1.0,
+        "form_class": 80,
+        "diameter_outside_bark": 0.0,
+        "butt_swelling_ratio": 0.0,
+        "volume_equation": "A00F33W242",
+        "species": 242
+      },
+      "expected": {
+        "errflag": 0,
+        "vol": [
+          107.0,
+          450.0,
+          0.0,
+          96.49999237060547,
+          0.0,
+          0.0,
+          1.399999976158142,
+          0.0,
+          0.0,
+          650.0,
+          0.0,
+          10.0,
+          0.0,
+          3.134093761444092,
+          0.6762959957122803
+        ]
+      },
+      "notes": "Alaska western redcedar 3-point via form class, JRSP 2; adds VAR_AK coefficient unpack (372-393) and COR_AK (286) via SF_3PT/SF_YHAT3"
+    },
+    {
+      "name": "f_alaska_3pt_spruce_fclass",
+      "api": "vollib_r",
+      "inputs": {
+        "region": 10,
+        "forest": "05",
+        "district": "01",
+        "dbh": 20.0,
+        "total_height": 120.0,
+        "primary_merchantable_top": 6.0,
+        "secondary_merchantable_top": 4.0,
+        "height_to_first_product": 0.0,
+        "height_to_second_product": 0.0,
+        "upper_stem_height": 0.0,
+        "upper_stem_diameter": 0.0,
+        "stump_height": 1.0,
+        "form_class": 80,
+        "diameter_outside_bark": 0.0,
+        "butt_swelling_ratio": 0.0,
+        "volume_equation": "A00F33W098",
+        "species": 98
+      },
+      "expected": {
+        "errflag": 0,
+        "vol": [
+          109.0999984741211,
+          450.0,
+          0.0,
+          98.49999237060547,
+          0.0,
+          0.0,
+          1.399999976158142,
+          0.0,
+          0.0,
+          665.0,
+          0.0,
+          10.0,
+          0.0,
+          2.6743717193603516,
+          0.6762959957122803
+        ]
+      },
+      "notes": "Alaska Sitka spruce 3-point via form class, JRSP 3; adds VAR_AK coefficient unpack (372-393) and COR_AK (286) via SF_3PT/SF_YHAT3"
+    },
+    {
+      "name": "f_alaska_3pt_hemlock_fclass",
+      "api": "vollib_r",
+      "inputs": {
+        "region": 10,
+        "forest": "05",
+        "district": "01",
+        "dbh": 20.0,
+        "total_height": 120.0,
+        "primary_merchantable_top": 6.0,
+        "secondary_merchantable_top": 4.0,
+        "height_to_first_product": 0.0,
+        "height_to_second_product": 0.0,
+        "upper_stem_height": 0.0,
+        "upper_stem_diameter": 0.0,
+        "stump_height": 1.0,
+        "form_class": 80,
+        "diameter_outside_bark": 0.0,
+        "butt_swelling_ratio": 0.0,
+        "volume_equation": "A00F33W260",
+        "species": 260
+      },
+      "expected": {
+        "errflag": 0,
+        "vol": [
+          108.20000457763672,
+          450.0,
+          0.0,
+          100.30000305175781,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          680.0,
+          0.0,
+          0.0,
+          0.0,
+          2.5670225620269775,
+          2.356127977371216
+        ]
+      },
+      "notes": "Alaska western hemlock 3-point via form class, JRSP 3; adds VAR_AK coefficient unpack (372-393) and COR_AK (286) via SF_3PT/SF_YHAT3"
+    },
+    {
+      "name": "f_alaska_3pt_spruce2g_fclass",
+      "api": "vollib_r",
+      "inputs": {
+        "region": 10,
+        "forest": "05",
+        "district": "01",
+        "dbh": 20.0,
+        "total_height": 120.0,
+        "primary_merchantable_top": 6.0,
+        "secondary_merchantable_top": 4.0,
+        "height_to_first_product": 0.0,
+        "height_to_second_product": 0.0,
+        "upper_stem_height": 0.0,
+        "upper_stem_diameter": 0.0,
+        "stump_height": 1.0,
+        "form_class": 80,
+        "diameter_outside_bark": 0.0,
+        "butt_swelling_ratio": 0.0,
+        "volume_equation": "A02F33W098",
+        "species": 98
+      },
+      "expected": {
+        "errflag": 0,
+        "vol": [
+          112.80000305175781,
+          460.0,
+          0.0,
+          104.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          705.0,
+          0.0,
+          0.0,
+          0.0,
+          2.824619770050049,
+          2.1597840785980225
+        ]
+      },
+      "notes": "Alaska spruce second growth 3-point via form class, JRSP 4; adds VAR_AK coefficient unpack (372-393) and COR_AK (286) via SF_3PT/SF_YHAT3"
+    },
+    {
+      "name": "f_alaska_3pt_hemlock2g_fclass",
+      "api": "vollib_r",
+      "inputs": {
+        "region": 10,
+        "forest": "05",
+        "district": "01",
+        "dbh": 20.0,
+        "total_height": 120.0,
+        "primary_merchantable_top": 6.0,
+        "secondary_merchantable_top": 4.0,
+        "height_to_first_product": 0.0,
+        "height_to_second_product": 0.0,
+        "upper_stem_height": 0.0,
+        "upper_stem_diameter": 0.0,
+        "stump_height": 1.0,
+        "form_class": 80,
+        "diameter_outside_bark": 0.0,
+        "butt_swelling_ratio": 0.0,
+        "volume_equation": "A02F33W263",
+        "species": 263
+      },
+      "expected": {
+        "errflag": 0,
+        "vol": [
+          111.70000457763672,
+          460.0,
+          0.0,
+          104.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          705.0,
+          0.0,
+          0.0,
+          0.0,
+          2.7387847900390625,
+          2.1597840785980225
+        ]
+      },
+      "notes": "Alaska hemlock second growth 3-point via form class, JRSP 4; adds VAR_AK coefficient unpack (372-393) and COR_AK (286) via SF_3PT/SF_YHAT3"
+    },
+    {
+      "name": "getvoleq_r10_ycedar",
+      "api": "getvoleq_r",
+      "inputs": {
+        "region": 10,
+        "forest": "05",
+        "district": "01",
+        "species": 42
+      },
+      "expected": {
+        "voleq": "A00F32W042",
+        "errflag": 0
+      },
+      "notes": "Region 10 default equation lookup via R10_EQN (voleqdef.f:2351); confirms the equation strings the f_alaska cases pass explicitly are the documented defaults"
+    },
+    {
+      "name": "getvoleq_r10_spruce",
+      "api": "getvoleq_r",
+      "inputs": {
+        "region": 10,
+        "forest": "05",
+        "district": "01",
+        "species": 98
+      },
+      "expected": {
+        "voleq": "A00F32W098",
+        "errflag": 0
+      },
+      "notes": "Region 10 default equation lookup via R10_EQN (voleqdef.f:2351); confirms the equation strings the f_alaska cases pass explicitly are the documented defaults"
+    },
+    {
+      "name": "getvoleq_r10_redcedar",
+      "api": "getvoleq_r",
+      "inputs": {
+        "region": 10,
+        "forest": "05",
+        "district": "01",
+        "species": 242
+      },
+      "expected": {
+        "voleq": "A00F32W242",
+        "errflag": 0
+      },
+      "notes": "Region 10 default equation lookup via R10_EQN (voleqdef.f:2351); confirms the equation strings the f_alaska cases pass explicitly are the documented defaults"
+    },
+    {
+      "name": "getvoleq_r10_hemlock",
+      "api": "getvoleq_r",
+      "inputs": {
+        "region": 10,
+        "forest": "05",
+        "district": "01",
+        "species": 263
+      },
+      "expected": {
+        "voleq": "A00F32W260",
+        "errflag": 0
+      },
+      "notes": "Region 10 default equation lookup via R10_EQN (voleqdef.f:2351); confirms the equation strings the f_alaska cases pass explicitly are the documented defaults"
+    },
+    {
+      "name": "getvoleq_r10_spruce_2g",
+      "api": "getvoleq_r",
+      "inputs": {
+        "region": 10,
+        "forest": "05",
+        "district": "01",
+        "species": 2098
+      },
+      "expected": {
+        "voleq": "A02F32W098",
+        "errflag": 0
+      },
+      "notes": "Region 10 default equation lookup via R10_EQN (voleqdef.f:2351); confirms the equation strings the f_alaska cases pass explicitly are the documented defaults"
+    },
+    {
+      "name": "getvoleq_r10_hemlock_2g",
+      "api": "getvoleq_r",
+      "inputs": {
+        "region": 10,
+        "forest": "05",
+        "district": "01",
+        "species": 2263
+      },
+      "expected": {
+        "voleq": "A02F32W263",
+        "errflag": 0
+      },
+      "notes": "Region 10 default equation lookup via R10_EQN (voleqdef.f:2351); confirms the equation strings the f_alaska cases pass explicitly are the documented defaults"
     }
   ]
 }
