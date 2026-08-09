@@ -3,21 +3,21 @@
 Source log: `fortran_build/gfortran_build.log`
 Inventory: `warnings_inventory_baseline.csv`
 
-- **Total warnings:** 1944
-- **Files:** 101
-- **Tier A / B / C:** 211 / 1724 / 9
+- **Total warnings:** 1842
+- **Files:** 100
+- **Tier A / B / C:** 176 / 1657 / 9
 
 ## By category
 
 | Category | Count |
 |----------|------:|
-| `tab_character` | 1031 |
+| `tab_character` | 968 |
 | `unused_variable` | 552 |
-| `type_conversion` | 168 |
+| `type_conversion` | 133 |
 | `unused_dummy_argument` | 82 |
-| `unused_label` | 30 |
 | `character_truncation` | 29 |
-| `deleted_feature` | 27 |
+| `unused_label` | 28 |
+| `deleted_feature` | 25 |
 | `uninitialized` | 14 |
 | `large_stack_array` | 9 |
 | `extension` | 2 |
@@ -32,7 +32,6 @@ Inventory: `warnings_inventory_baseline.csv`
 | `r8vol2.f` | 116 |
 | `profile2.f` | 107 |
 | `r9clark.f` | 88 |
-| `r10vol1.f` | 78 |
 | `pmtprofile.f` | 55 |
 | `formclas.f` | 54 |
 | `blmvol.f` | 49 |
@@ -47,8 +46,9 @@ Inventory: `warnings_inventory_baseline.csv`
 | `r8vol.f` | 29 |
 | `calcdia.f` | 27 |
 | `volapss.f` | 27 |
-| `r10tap.f` | 26 |
 | `calcbiomass.f` | 25 |
 | `getvoleq.f` | 25 |
 | `fia_kemp_vol.for` | 24 |
+| `r4vol.f` | 24 |
+| `r6vol.f` | 24 |
 
