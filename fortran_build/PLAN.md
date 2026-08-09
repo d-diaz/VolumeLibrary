@@ -34,7 +34,7 @@ flowchart LR
 |-------|------|------|--------|
 | 0 | Repo manifest, shared library, ctypes, initial goldens | `pytest tests/` passes | COMPLETE |
 | 1a | Re-capture warning baseline on repo-native manifest | Inventory committed | COMPLETE |
-| 1b | Tier A/B fix batches | Warning count down; pytest unchanged for Tier A | IN PROGRESS — `sf_zero.f`, `f_west.f`, `f_other.f`, `f_alaska.f` done; `r10vol1.f` next |
+| 1b | Tier A/B fix batches | Warning count down; pytest unchanged for Tier A | IN PROGRESS — `sf_zero.f`, `f_west.f`, `f_other.f`, `f_alaska.f`, `r10vol1.f`+`r10tap.f` done; `honer.f` next |
 | 2 | Upstream PRs to FMSC | Fork CI green; optional FVS smoke | IN PROGRESS — `sf_zero.f` merged (FMSC#13); `f_west.f` (FMSC#15) and `f_other.f` (FMSC#16) open |
 
 ## Context
@@ -45,8 +45,8 @@ flowchart LR
 |------|----------------|
 | Source manifest | `nvel_fortran_sources.txt` (121 files) |
 | Remediation baseline | **2,110** warnings in **102** files — Tier A/B/C **363 / 1,738 / 9** |
-| Current | **1,944** warnings in **101** files — Tier A/B/C **211 / 1,724 / 9** (2026-08-08, gfortran 13.3.0) |
-| Cleared so far | **166** (70 `f_west.f`, 54 `f_other.f`, 40 `f_alaska.f`, 2 `sf_zero.f`) |
+| Current | **1,842** warnings in **100** files — Tier A/B/C **176 / 1,657 / 9** (2026-08-09, gfortran 13.3.0) |
+| Cleared so far | **268** (76 `r10vol1.f`, 70 `f_west.f`, 54 `f_other.f`, 40 `f_alaska.f`, 26 `r10tap.f`, 2 `sf_zero.f`) |
 | Numerical tests | `tests/goldens/cases.json` + `pytest tests/` |
 
 ### What "remediation baseline" means
@@ -74,11 +74,11 @@ Add `-D` defines only when needed; do not assume FVS `-DCMPgcc` unless a specifi
 
 | Category | Baseline | Current | Files | Typical fix |
 |----------|--------:|--------:|------:|-------------|
-| `type_conversion` | 317 | 168 | 36 | Explicit `REAL()` / `DBLE()` / `INT()` / single-precision literals |
+| `type_conversion` | 317 | 133 | 34 | Explicit `REAL()` / `DBLE()` / `INT()` / single-precision literals |
 | `character_truncation` | 29 | 29 | 2 | Substring `(1:n)` or align declarations |
 | `uninitialized` | 15 | 14 | 8 | Initialize at declaration or before use |
 | `integer_division` | 2 | **0** | 0 | Use `REAL()` / `DBLE()` before division or explicit `NINT()` |
-| **Tier A total** | **363** | **211** | | 152 cleared (42%) |
+| **Tier A total** | **363** | **176** | | 187 cleared (52%) |
 
 **Tier A batches require pytest goldens** recorded before edits. Re-run `pytest` after fixes.
 
@@ -86,13 +86,13 @@ Add `-D` defines only when needed; do not assume FVS `-DCMPgcc` unless a specifi
 
 | Category | Baseline | Current | Files | Typical fix |
 |----------|--------:|--------:|------:|-------------|
-| `tab_character` | 1,043 | 1,031 | 43 | Spaces instead of tabs |
+| `tab_character` | 1,043 | 968 | 41 | Spaces instead of tabs |
 | `unused_variable` | 552 | 552 | 54 | Remove dead locals |
 | `unused_dummy_argument` | 82 | 82 | 37 | Remove from interface or document + scratch use |
-| `unused_label` | 32 | 30 | 15 | Remove unused labels |
-| `deleted_feature` | 27 | 27 | 6 | Replace deleted Fortran features (e.g. `PAUSE`, `DO` without loop var) |
+| `unused_label` | 32 | 28 | 13 | Remove unused labels |
+| `deleted_feature` | 27 | 25 | 5 | Replace deleted Fortran features (e.g. `PAUSE`, `DO` without loop var) |
 | `extension` | 2 | 2 | 2 | Remove or guard non-standard extensions |
-| **Tier B total** | **1,738** | **1,724** | | 14 cleared |
+| **Tier B total** | **1,738** | **1,657** | | 81 cleared |
 
 `tab_character` is now the largest single category. It jumped 302 → 1,043 on 2026-08-07 when `parse_build_warnings.py` was fixed to record gfortran's driver-level `f951:` warnings; the tabs were always there, only the measurement changed.
 
@@ -119,8 +119,9 @@ Tier A counts, baseline → current:
 | 1 | `f_west.f` | 68 | **0** | **done** — 1 documented dummy arg (Tier B) remains |
 | 2 | `f_other.f` | 53 | **0** | **done** — 53 narrowing assignments + the line-70 tab; 20 new R2/R3/R4 goldens |
 | 3 | `f_alaska.f` | 29 | **0** | **done** — 29 narrowing stores + 11 tabs; 18 new R10 goldens |
-| 4 | `r10vol1.f` | 28 | 28 | next |
-| 5 | `honer.f` | 21 | 21 | pending |
+| 4 | `r10vol1.f` | 28 | **0** | **done** — 78 → 2 via one `REAL*8`→`REAL` declaration fix (26), 2 `INT()`, 47 tabs, 1 label, 2 `DO` terminators; byte-identical machine code |
+| 4b | `r10tap.f` | 7 | **0** | **done** — same one-line declaration fix; 26 → 0, leaves the inventory |
+| 5 | `honer.f` | 21 | 21 | next — 19 `character_truncation`, a different fix class |
 | 6 | `f_ingy.f` 14, `sf_taper.f` 12, `nsvb.f` 12, `r10volo.f` 10, `fiaeq2nveleq.for` 10 | 58 | 58 | pending |
 
 `sf_zero.f` (2 `integer_division`, batch 0d) was cleared ahead of this batch as a workflow rehearsal and is not listed above.
@@ -168,6 +169,20 @@ Run `fortran_build/check_warnings.sh` (or the underlying `build_gfortran_warning
 ### Numerical regression (Tier A and wrapper batches)
 
 Record goldens with `python3 tests/record_goldens.py` **before** Tier A edits, then `pytest tests/ -v` after fixes. Golden outputs must stay within tolerance (default `1e-3`).
+
+### Assembly identity (preferred gate for no-op batches)
+
+Introduced in Batch 1e. When a batch claims to change no behaviour, compile the file before and after and diff the generated assembly:
+
+```bash
+gfortran -fPIC -cpp -O2 -S file.f -o /tmp/pre.s     # before edits
+gfortran -fPIC -cpp -O2 -S file.f -o /tmp/post.s    # after
+diff <(tail -n +2 /tmp/pre.s) <(tail -n +2 /tmp/post.s)   # skip the .file directive
+```
+
+Drop `-g` so no debug line tables enter the comparison, and run it at both `-O0` and `-O2`. A byte-identical result is a **proof over all inputs**, which no golden grid can match — it says the compiler emitted the same machine code. Where it applies it supersedes the bit-identity sweep and the gcov coverage pass, and it is the only gate available for files no test can reach.
+
+**Always validate the comparison with a perturbation control:** change one coefficient and confirm the diff becomes non-empty. Two controls silently no-opped during Batch 1e — one `sed` targeted a line number that had shifted, another perturbed the 9th significant digit of a `REAL(4)` constant, which rounds to the same float. A control that cannot fail proves nothing; perturb the 6th significant digit or coarser.
 
 ### Optional FVS smoke (before large upstream PRs)
 

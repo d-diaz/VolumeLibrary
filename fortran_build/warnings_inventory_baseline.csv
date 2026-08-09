@@ -872,32 +872,6 @@ tab_character,B,1,r10d2h.f,280,1,Nonconforming tab character in column 1 of line
 tab_character,B,1,r10d2h.f,281,1,Nonconforming tab character in column 1 of line 281 [-Wtabs],r10d2h.f,r10d2h.f
 unused_variable,B,1,r10d2h.f,26,20,Unused variable ‘pi’ declared at (1) [-Wunused-variable],r10d2h.f,r10d2h.f
 unused_variable,B,1,r10d2h.f,25,19,Unused variable ‘volm’ declared at (1) [-Wunused-variable],r10d2h.f,r10d2h.f
-tab_character,B,1,r10tap.f,158,1,Nonconforming tab character in column 1 of line 158 [-Wtabs],r10tap.f,r10tap.f
-tab_character,B,1,r10tap.f,159,1,Nonconforming tab character in column 1 of line 159 [-Wtabs],r10tap.f,r10tap.f
-tab_character,B,1,r10tap.f,160,1,Nonconforming tab character in column 1 of line 160 [-Wtabs],r10tap.f,r10tap.f
-tab_character,B,1,r10tap.f,162,1,Nonconforming tab character in column 1 of line 162 [-Wtabs],r10tap.f,r10tap.f
-tab_character,B,1,r10tap.f,172,1,Nonconforming tab character in column 1 of line 172 [-Wtabs],r10tap.f,r10tap.f
-tab_character,B,1,r10tap.f,173,1,Nonconforming tab character in column 1 of line 173 [-Wtabs],r10tap.f,r10tap.f
-tab_character,B,1,r10tap.f,174,1,Nonconforming tab character in column 1 of line 174 [-Wtabs],r10tap.f,r10tap.f
-tab_character,B,1,r10tap.f,176,1,Nonconforming tab character in column 1 of line 176 [-Wtabs],r10tap.f,r10tap.f
-tab_character,B,1,r10tap.f,179,1,Nonconforming tab character in column 1 of line 179 [-Wtabs],r10tap.f,r10tap.f
-tab_character,B,1,r10tap.f,182,1,Nonconforming tab character in column 1 of line 182 [-Wtabs],r10tap.f,r10tap.f
-tab_character,B,1,r10tap.f,186,1,Nonconforming tab character in column 1 of line 186 [-Wtabs],r10tap.f,r10tap.f
-tab_character,B,1,r10tap.f,187,1,Nonconforming tab character in column 1 of line 187 [-Wtabs],r10tap.f,r10tap.f
-tab_character,B,1,r10tap.f,188,1,Nonconforming tab character in column 1 of line 188 [-Wtabs],r10tap.f,r10tap.f
-tab_character,B,1,r10tap.f,190,1,Nonconforming tab character in column 1 of line 190 [-Wtabs],r10tap.f,r10tap.f
-tab_character,B,1,r10tap.f,192,1,Nonconforming tab character in column 1 of line 192 [-Wtabs],r10tap.f,r10tap.f
-tab_character,B,1,r10tap.f,193,1,Nonconforming tab character in column 1 of line 193 [-Wtabs],r10tap.f,r10tap.f
-tab_character,B,1,r10tap.f,194,1,Nonconforming tab character in column 1 of line 194 [-Wtabs],r10tap.f,r10tap.f
-tab_character,B,1,r10tap.f,196,1,Nonconforming tab character in column 1 of line 196 [-Wtabs],r10tap.f,r10tap.f
-unused_label,B,1,r10tap.f,201,5,Label 900 at (1) defined but not used [-Wunused-label],r10tap.f,r10tap.f
-type_conversion,A,3,r10tap.f,125,15,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],r10tap.f,r10tap.f
-type_conversion,A,3,r10tap.f,127,17,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],r10tap.f,r10tap.f
-type_conversion,A,3,r10tap.f,150,15,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],r10tap.f,r10tap.f
-type_conversion,A,3,r10tap.f,152,17,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],r10tap.f,r10tap.f
-type_conversion,A,3,r10tap.f,161,19,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],r10tap.f,r10tap.f
-type_conversion,A,3,r10tap.f,187,18,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],r10tap.f,r10tap.f
-type_conversion,A,3,r10tap.f,189,18,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],r10tap.f,r10tap.f
 unused_label,B,1,r10tapo.f,400,5,Label 900 at (1) defined but not used [-Wunused-label],r10tapo.f,r10tapo.f
 type_conversion,A,3,r10vol.f,82,14,Possible change of value in conversion from REAL(4) to INTEGER(4) at (1) [-Wconversion],r10vol.f,r10vol.f
 unused_variable,B,1,r10vol.f,17,51,Unused variable ‘holdlv’ declared at (1) [-Wunused-variable],r10vol.f,r10vol.f
@@ -906,82 +880,6 @@ unused_dummy_argument,B,1,r10vol.f,4,41,Unused dummy argument ‘nologs’ at (1
 unused_dummy_argument,B,1,r10vol.f,5,36,Unused dummy argument ‘spflg’ at (1) [-Wunused-dummy-argument],r10vol.f,r10vol.f
 unused_variable,B,1,r10vol.f,17,29,Unused variable ‘tmpht2’ declared at (1) [-Wunused-variable],r10vol.f,r10vol.f
 unused_variable,B,1,r10vol.f,11,31,Unused variable ‘tmpveq’ declared at (1) [-Wunused-variable],r10vol.f,r10vol.f
-tab_character,B,1,r10vol1.f,641,1,Nonconforming tab character in column 1 of line 641 [-Wtabs],r10vol1.f,r10vol1.f
-tab_character,B,1,r10vol1.f,642,1,Nonconforming tab character in column 1 of line 642 [-Wtabs],r10vol1.f,r10vol1.f
-tab_character,B,1,r10vol1.f,643,1,Nonconforming tab character in column 1 of line 643 [-Wtabs],r10vol1.f,r10vol1.f
-tab_character,B,1,r10vol1.f,645,1,Nonconforming tab character in column 1 of line 645 [-Wtabs],r10vol1.f,r10vol1.f
-tab_character,B,1,r10vol1.f,656,1,Nonconforming tab character in column 1 of line 656 [-Wtabs],r10vol1.f,r10vol1.f
-tab_character,B,1,r10vol1.f,657,1,Nonconforming tab character in column 1 of line 657 [-Wtabs],r10vol1.f,r10vol1.f
-tab_character,B,1,r10vol1.f,659,1,Nonconforming tab character in column 1 of line 659 [-Wtabs],r10vol1.f,r10vol1.f
-tab_character,B,1,r10vol1.f,674,1,Nonconforming tab character in column 1 of line 674 [-Wtabs],r10vol1.f,r10vol1.f
-tab_character,B,1,r10vol1.f,676,1,Nonconforming tab character in column 1 of line 676 [-Wtabs],r10vol1.f,r10vol1.f
-tab_character,B,1,r10vol1.f,679,1,Nonconforming tab character in column 1 of line 679 [-Wtabs],r10vol1.f,r10vol1.f
-tab_character,B,1,r10vol1.f,682,1,Nonconforming tab character in column 1 of line 682 [-Wtabs],r10vol1.f,r10vol1.f
-tab_character,B,1,r10vol1.f,686,1,Nonconforming tab character in column 1 of line 686 [-Wtabs],r10vol1.f,r10vol1.f
-tab_character,B,1,r10vol1.f,687,1,Nonconforming tab character in column 1 of line 687 [-Wtabs],r10vol1.f,r10vol1.f
-tab_character,B,1,r10vol1.f,690,1,Nonconforming tab character in column 1 of line 690 [-Wtabs],r10vol1.f,r10vol1.f
-tab_character,B,1,r10vol1.f,696,1,Nonconforming tab character in column 1 of line 696 [-Wtabs],r10vol1.f,r10vol1.f
-tab_character,B,1,r10vol1.f,698,1,Nonconforming tab character in column 1 of line 698 [-Wtabs],r10vol1.f,r10vol1.f
-tab_character,B,1,r10vol1.f,701,1,Nonconforming tab character in column 1 of line 701 [-Wtabs],r10vol1.f,r10vol1.f
-tab_character,B,1,r10vol1.f,704,1,Nonconforming tab character in column 1 of line 704 [-Wtabs],r10vol1.f,r10vol1.f
-tab_character,B,1,r10vol1.f,707,1,Nonconforming tab character in column 1 of line 707 [-Wtabs],r10vol1.f,r10vol1.f
-tab_character,B,1,r10vol1.f,708,1,Nonconforming tab character in column 1 of line 708 [-Wtabs],r10vol1.f,r10vol1.f
-tab_character,B,1,r10vol1.f,711,1,Nonconforming tab character in column 1 of line 711 [-Wtabs],r10vol1.f,r10vol1.f
-tab_character,B,1,r10vol1.f,720,1,Nonconforming tab character in column 1 of line 720 [-Wtabs],r10vol1.f,r10vol1.f
-tab_character,B,1,r10vol1.f,722,1,Nonconforming tab character in column 1 of line 722 [-Wtabs],r10vol1.f,r10vol1.f
-tab_character,B,1,r10vol1.f,725,1,Nonconforming tab character in column 1 of line 725 [-Wtabs],r10vol1.f,r10vol1.f
-tab_character,B,1,r10vol1.f,728,1,Nonconforming tab character in column 1 of line 728 [-Wtabs],r10vol1.f,r10vol1.f
-tab_character,B,1,r10vol1.f,731,1,Nonconforming tab character in column 1 of line 731 [-Wtabs],r10vol1.f,r10vol1.f
-tab_character,B,1,r10vol1.f,732,1,Nonconforming tab character in column 1 of line 732 [-Wtabs],r10vol1.f,r10vol1.f
-tab_character,B,1,r10vol1.f,735,1,Nonconforming tab character in column 1 of line 735 [-Wtabs],r10vol1.f,r10vol1.f
-tab_character,B,1,r10vol1.f,742,1,Nonconforming tab character in column 1 of line 742 [-Wtabs],r10vol1.f,r10vol1.f
-tab_character,B,1,r10vol1.f,744,1,Nonconforming tab character in column 1 of line 744 [-Wtabs],r10vol1.f,r10vol1.f
-tab_character,B,1,r10vol1.f,747,1,Nonconforming tab character in column 1 of line 747 [-Wtabs],r10vol1.f,r10vol1.f
-tab_character,B,1,r10vol1.f,750,1,Nonconforming tab character in column 1 of line 750 [-Wtabs],r10vol1.f,r10vol1.f
-tab_character,B,1,r10vol1.f,753,1,Nonconforming tab character in column 1 of line 753 [-Wtabs],r10vol1.f,r10vol1.f
-tab_character,B,1,r10vol1.f,754,1,Nonconforming tab character in column 1 of line 754 [-Wtabs],r10vol1.f,r10vol1.f
-tab_character,B,1,r10vol1.f,757,1,Nonconforming tab character in column 1 of line 757 [-Wtabs],r10vol1.f,r10vol1.f
-tab_character,B,1,r10vol1.f,774,1,Nonconforming tab character in column 1 of line 774 [-Wtabs],r10vol1.f,r10vol1.f
-tab_character,B,1,r10vol1.f,776,1,Nonconforming tab character in column 1 of line 776 [-Wtabs],r10vol1.f,r10vol1.f
-tab_character,B,1,r10vol1.f,779,1,Nonconforming tab character in column 1 of line 779 [-Wtabs],r10vol1.f,r10vol1.f
-tab_character,B,1,r10vol1.f,782,1,Nonconforming tab character in column 1 of line 782 [-Wtabs],r10vol1.f,r10vol1.f
-tab_character,B,1,r10vol1.f,788,1,Nonconforming tab character in column 1 of line 788 [-Wtabs],r10vol1.f,r10vol1.f
-tab_character,B,1,r10vol1.f,789,1,Nonconforming tab character in column 1 of line 789 [-Wtabs],r10vol1.f,r10vol1.f
-tab_character,B,1,r10vol1.f,791,1,Nonconforming tab character in column 1 of line 791 [-Wtabs],r10vol1.f,r10vol1.f
-tab_character,B,1,r10vol1.f,795,1,Nonconforming tab character in column 1 of line 795 [-Wtabs],r10vol1.f,r10vol1.f
-tab_character,B,1,r10vol1.f,796,1,Nonconforming tab character in column 1 of line 796 [-Wtabs],r10vol1.f,r10vol1.f
-tab_character,B,1,r10vol1.f,798,1,Nonconforming tab character in column 1 of line 798 [-Wtabs],r10vol1.f,r10vol1.f
-deleted_feature,B,1,r10vol1.f,131,72,Fortran 2018 deleted feature: DO termination statement which is not END DO or CONTINUE with label 36 at (1),r10vol1.f,r10vol1.f
-deleted_feature,B,1,r10vol1.f,271,72,Fortran 2018 deleted feature: DO termination statement which is not END DO or CONTINUE with label 254 at (1),r10vol1.f,r10vol1.f
-unused_label,B,1,r10vol1.f,898,5,Label 5546 at (1) defined but not used [-Wunused-label],r10vol1.f,r10vol1.f
-type_conversion,A,3,r10vol1.f,644,20,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],r10vol1.f,r10vol1.f
-type_conversion,A,3,r10vol1.f,653,31,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],r10vol1.f,r10vol1.f
-type_conversion,A,3,r10vol1.f,687,23,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],r10vol1.f,r10vol1.f
-type_conversion,A,3,r10vol1.f,689,23,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],r10vol1.f,r10vol1.f
-type_conversion,A,3,r10vol1.f,708,21,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],r10vol1.f,r10vol1.f
-type_conversion,A,3,r10vol1.f,710,21,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],r10vol1.f,r10vol1.f
-type_conversion,A,3,r10vol1.f,732,23,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],r10vol1.f,r10vol1.f
-type_conversion,A,3,r10vol1.f,734,23,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],r10vol1.f,r10vol1.f
-type_conversion,A,3,r10vol1.f,754,21,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],r10vol1.f,r10vol1.f
-type_conversion,A,3,r10vol1.f,756,21,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],r10vol1.f,r10vol1.f
-type_conversion,A,3,r10vol1.f,788,26,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],r10vol1.f,r10vol1.f
-type_conversion,A,3,r10vol1.f,790,26,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],r10vol1.f,r10vol1.f
-type_conversion,A,3,r10vol1.f,795,26,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],r10vol1.f,r10vol1.f
-type_conversion,A,3,r10vol1.f,797,26,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],r10vol1.f,r10vol1.f
-type_conversion,A,3,r10vol1.f,848,24,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],r10vol1.f,r10vol1.f
-type_conversion,A,3,r10vol1.f,849,26,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],r10vol1.f,r10vol1.f
-type_conversion,A,3,r10vol1.f,855,24,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],r10vol1.f,r10vol1.f
-type_conversion,A,3,r10vol1.f,856,26,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],r10vol1.f,r10vol1.f
-type_conversion,A,3,r10vol1.f,891,21,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],r10vol1.f,r10vol1.f
-type_conversion,A,3,r10vol1.f,892,23,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],r10vol1.f,r10vol1.f
-type_conversion,A,3,r10vol1.f,899,21,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],r10vol1.f,r10vol1.f
-type_conversion,A,3,r10vol1.f,900,23,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],r10vol1.f,r10vol1.f
-type_conversion,A,3,r10vol1.f,946,21,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],r10vol1.f,r10vol1.f
-type_conversion,A,3,r10vol1.f,947,23,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],r10vol1.f,r10vol1.f
-type_conversion,A,3,r10vol1.f,953,21,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],r10vol1.f,r10vol1.f
-type_conversion,A,3,r10vol1.f,954,23,Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion],r10vol1.f,r10vol1.f
-type_conversion,A,3,r10vol1.f,119,24,Possible change of value in conversion from REAL(4) to INTEGER(4) at (1) [-Wconversion],r10vol1.f,r10vol1.f
-type_conversion,A,3,r10vol1.f,133,22,Possible change of value in conversion from REAL(4) to INTEGER(4) at (1) [-Wconversion],r10vol1.f,r10vol1.f
 unused_dummy_argument,B,1,r10vol1.f,2,42,Unused dummy argument ‘mtops’ at (1) [-Wunused-dummy-argument],r10vol1.f,r10vol1.f
 unused_dummy_argument,B,1,r10vol1.f,4,36,Unused dummy argument ‘spflg’ at (1) [-Wunused-dummy-argument],r10vol1.f,r10vol1.f
 type_conversion,A,3,r10volo.f,105,15,Possible change of value in conversion from REAL(4) to INTEGER(4) at (1) [-Wconversion],r10volo.f,r10volo.f
