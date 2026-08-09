@@ -59,9 +59,29 @@ flowchart TB
 git fetch upstream
 git checkout main
 git merge upstream/master
+git push origin main
 ```
 
-Resolve conflicts per [FORK.md](../FORK.md) (e.g. keep upstream content under `_legacy/` when paths diverge).
+Resolve conflicts per [FORK.md](../FORK.md) (e.g. keep upstream content under `_legacy/` when paths diverge). The recurring one is `.vs/`: upstream keeps Visual Studio scratch files at the repo root, this fork archives them under `_legacy/vs/`, so git reports a *file location* conflict even when both sides hold the identical blob. Keep the `_legacy/vs/` copy and delete the root one — `.vs/` is gitignored anyway.
+
+**This step must produce a merge commit, and that has two consequences on this fork.**
+
+The `main` branch is squash-only (`allow_merge_commit: false`) with `required_linear_history: true`, so both the PR route and an ordinary push would strip the merge. A squash collapses the branch into a single-parent commit and discards the link to `upstream/master`; a rebase does the same. Without that second parent, upstream's commits never become ancestors of `main`, and GitHub keeps reporting the fork as "N commits behind" no matter how many times the *files* are synced. That is exactly how `356edd3` ("Chore: sync upstream version 20260729", squash-merged as PR #13) left the fork 5 behind with byte-identical content, until `048dc60` merged properly on 2026-08-09.
+
+So:
+
+- **Never squash a sync.** If you route this through a PR, merge it with `gh pr merge <n> --merge`, never `--squash` (which is the repo default — this is easy to get wrong on autopilot).
+- **Pushing the merge requires a repo admin.** Branch protection on `main` sets `required_linear_history: true`, which rejects two-parent commits, but `enforce_admins: false` exempts administrators — so an admin's direct `git push origin main` succeeds while a non-admin's is refused. There is currently no route for a non-admin to perform this step.
+
+Verify the sync actually took, rather than trusting the GitHub banner:
+
+```bash
+git rev-list --left-right --count main...upstream/master   # right-hand number must be 0
+git merge-base --is-ancestor upstream/master main && echo "fully contained"
+git log --format='%h parents=%p' -1 main                   # tip must show two parents
+```
+
+When upstream is merging changes the fork already carries, the merge is a content no-op; `git diff --stat <pre-merge-sha> main` should be empty.
 
 ### 2. Create a fork development branch
 
