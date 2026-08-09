@@ -131,7 +131,7 @@ C--  RULES IN THE VOLUME ESTIMATOR HANDBOOK FSH ???.
                         PIELEN(I)=16.0
                      END DO
                ENDIF
-               itmp = INT(ANINT((ht1prd-int(ht1prd))*10))
+               itmp = INT(ANINT((ht1prd-INT(ht1prd))*10))
                IF (itmp .eq. 5) THEN
                      NUMSEG=NUMSEG+1
                      LOGLEN(NUMSEG)=MAXLEN/2.0
